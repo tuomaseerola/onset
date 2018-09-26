@@ -2,6 +2,8 @@
 
 Onset detection is a well-established research area in MIR and there are multiple efficient solutions for extraction onsets from various types of musical materials. In the context of [Interpersonal Entrainment in Musical Performance (IEMP)](https://www.dur.ac.uk/iemp/), AHRC-funded research project, we wanted explore how tightly or loosely musicians in different ensembles synchronise to each other. For this, we needed to extract onsets from diverse range of multitrack audio recordings. We wanted to rely on a conventional onset extraction technique that would be applied to as many different kinds of onsets in order to make the temporal comparison of different instruments comparable. Also, we wanted to keep the temporal resolution of the onset estimation high, much higher than the often used tolerance in the onset detection evaluation (e.g., 80 ms).
 
+A number of other onset detection techniques (e.g, spectral difference, phase deviation, etc.) could have been used. There some widely available tools (e.g., _Sonic Visualiser_) for onset extraction, but we were not satisfied with accuracy and options this tool provided for our project. 
+
 ## Audio materials
 - Musical material in the [IEMP](https://www.dur.ac.uk/iemp/) project ranges from jembe music of West Africa to North Indian classical music to Western jazz.
 - IEMP Collection with annotations, audio and videos can be found at [OSF](https://osf.io/ks325/).
@@ -30,7 +32,4 @@ The folder also contains beat evaluation files from [audio onset detection secti
 
 The optimal values for the four parameters were defined for each instrument using a 1-minute sample of manually annotated onsets and customised for each main instrument types (sitar, sarod, and guitar, etc.). This customisation lead to accuracies (F scores) of 73 to 87.
 
-#### Caveats
-
-A number of other onset detection techniques (e.g, spectral difference, phase deviation, etc.) could have been used. There are several widely available tools (e.g., _Sonic Visualiser_) for onset extraction, but we were not satisfied with accuracy and options these tools provided for our project. 
 
