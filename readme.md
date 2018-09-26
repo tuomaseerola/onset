@@ -30,24 +30,21 @@ The folder also contains beat evaluation files from [audio onset detection secti
 
 #### Estimation of onset detection accuracy
 
-The optimal values for the four parameters were defined for each instrument using a 1-minute sample of manually annotated onsets for a handful of examples (9). These short audio files and annotations are available in the respective folders (`audio` and `groundtruth`). These 9 excerpts are all taken from the Indian corpus, selected and annotated by Martin Clayton. We focussed on these since the onsets in these intruments were challenging to extract whereas some instruments such as tabla are trivially easy. In terms of annotation, Martin Clayton has marked the onsets in Sonic Visualiser and then exported these as csv files (onset times in seconds). These can be found in `groundtruth` folder.
-
-##### Three guitar excerpts
-- `20160531_item3_take2_track4_guitarDI_38_72.wav`
-- `Debashish_Malhar_guitar_730-830.wav`
-- `Guitar_fast.wav`
-
-##### Three sarod excerpts
-- `PrattyushB_Jhinjhoti_2Gats_Sarod_Sept17.wav`
-- `Sarod_fast.wav`
-- `Sarod_slow.wav`
-
-##### Three sitar excerpts
-- `ShujaatKh_Jhinjhoti_Sitar_Sept17.wav`
-- `Sitar_fast.wav`
-- `Sitar_slow.wav`
+The optimal values for the four parameters were defined for each instrument using a 1-minute sample of manually annotated onsets for a handful of examples (9). These short audio files and annotations are available in the respective folders (`audio` and `groundtruth`). These 9 excerpts are all taken from the Indian corpus, selected and annotated by Martin Clayton. We focussed on these since the onsets in these intruments were challenging to extract whereas some instruments such as tabla are trivially easy. In terms of annotation, Martin Clayton has marked the onsets in Sonic Visualiser and then exported these as csv files (onset times in seconds). These excerpts can be found in `groundtruth` folder.
 
 If you run the `contents.R` in Matlab with the necessary packages (MIR toolbox + the functions from code folder, this will extract the onsets in all files and assess the accuracy using F-score, leading decent hit rates, see the table below:
+
+| Characteristics | Types |
+
+| ------ | ----------- |
+
+| Altered Wing Structures   | Short, long, none |
+
+| Altered Body Color | brown, gold, green |
+
+| Altered Eye Color    | brown, red, hazel |
+
+CCCCCC
 
 | Filename                   | Accuracy (F) |
 | -------------------------- | ------------ |
