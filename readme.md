@@ -50,7 +50,7 @@ The optimal values for the four parameters were defined for each instrument usin
 If you run the `contents.R` in Matlab with the necessary packages (MIR toolbox + the functions from code folder, this will extract the onsets in all files and assess the accuracy using F-score, leading decent hit rates, see the table below:
 
 | Filename                   | Accuracy (F) |
-|--------------------------- |------------- |
+| -------------------------- | ------------ |
 | 20160531_item3_take2_track4_guitarDI_38_72.wav | 87.3 |
 | Guitar_fast.wav | 85.5 |
 | Debashish_Malhar_guitar_730-830.wav | 79.4 |
