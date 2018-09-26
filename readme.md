@@ -1,15 +1,12 @@
-# Readme
+# Onset detection in the Interpersonal Entrainment in Musical Performance
 
-## Onset detection
-Onset detection is a well-established research area in MIR and there are multiple efficient solutions for extraction onsets from various types of musical materials. Here we wanted to rely on a conventional technique that would be applied to as many different kinds of onsets in this particular corpora in order to make the temporal comparison of different instruments reliable.
+Onset detection is a well-established research area in MIR and there are multiple efficient solutions for extraction onsets from various types of musical materials ^[[Bello, J.P., Daudet, L., Abdallah, S., Duxbury, C., Davies, M., Sandler, M.B. (2005) "A Tutorial on Onset Detection in Music Signals", IEEE Transactions on Speech and Audio Processing 13(5), pp 1035–1047](http://www.iro.umontreal.ca/~pift6080/H09/documents/papers/bello_onset_tutorial.pdf)]. In the context of [Interpersonal Entrainment in Musical Performance (IEMP)](https://www.dur.ac.uk/iemp/), AHRC-funded research project, we wanted explore how musicians in different ensembles synchronise to each other. For this, we needed to extract onsets from diverse range of audio recordings. We wanted to rely on a conventional onset extraction technique that would be applied to as many different kinds of onsets in order to make the temporal comparison of different instruments comparable. Also, we wanted to keep the temporal resolution of the onset estimation high, much higher than the often used tolerance in the onset detection evaluation (e.g., 80 ms).
 
-## Goals and audio materials  
-- To facilitate entrainment analyses in the [IEMP project](https://www.dur.ac.uk/iemp/), onsets need to extracted reliably, and transparently using the same technique from multiple instruments and performances.
-- The temporal resolution of the onset estimation should be high, much higher than the often used tolerance in onset detection evaluation (80 ms).
-- Musical material in the project ranges from jembe music of West Africa to North Indian classical music to Western jazz.
-- IEMP Collection can be found at [OSF](https://osf.io/ks325/)
+## Audio materials
+- Musical material in the [IEMP](https://www.dur.ac.uk/iemp/) project ranges from jembe music of West Africa to North Indian classical music to Western jazz.
+- IEMP Collection with annotations, audio and videos can be found at [OSF](https://osf.io/ks325/)
 
-## Technical details
+## Onset extraction: Technical details
 
 Onsets were extracted based on envelope characteristics using [Matlab](https://www.mathworks.com) and MIR Toolbox ([Lartillot, Toiviainen, & Eerola, 2008](https://www.jyu.fi/hytk/fi/laitokset/mutku/en/research/materials/mirtoolbox)).
 
@@ -17,16 +14,14 @@ Onsets were extracted based on envelope characteristics using [Matlab](https://w
 
 2. The envelope of the filtered signal is then extracted and subjected to low-pass filtering and half-wave rectification before applying peak-picking. 
 
-3.  Peak-picking algorithm had three parameters to determine (1) _the local contrast threshold value_, (2) _normalised amplitude threshold value_, and (3) _threshold value for the minimum difference between peak values_. 
+3.  Peak-picking algorithm had three parameters to determine (1) _the local contrast threshold value_, (2) _normalised amplitude threshold value_, and (3) _threshold value for the minimum difference between peak values_. This includes temporally precise estimation of the peak time using quadratic interpolation.
 
-4.  The optimal values of these parameters were defined for each instrument using a 1-minute sample of manually annotated onsets against 
+## Implementation and Accuracy
 
-## Accuracy
-
-In the manually annotated materials, the accuracy of the onset detection ranges from 73 to 87 (F).
+The optimal values for the four parameters were defined for each instrument using a 1-minute sample of manually annotated onsets and customised for each main instrument types (sitar, guitar, etc.). This customisation lead to accuracies (F scores) of 73 to 87.
 
 ## Code
-code folder contains the following files:
+Code folder contains the following files:
 
 * `contents.m` is script which allows to replicate the onset extraction accuracy analyses (F-measure) for a handful of files (sarod, sitar, and guitar) which contained manully annotated ground-truth data (onsets). The output is written to `Accuracy.csv`.
 
