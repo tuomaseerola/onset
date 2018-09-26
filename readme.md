@@ -32,25 +32,4 @@ The folder also contains beat evaluation files from [audio onset detection secti
 
 The optimal values for the four parameters were defined for each instrument using a 1-minute sample of manually annotated onsets for a handful of examples (9). These short audio files and annotations are available in the respective folders (`audio` and `groundtruth`). These 9 excerpts are all taken from the Indian corpus, selected and annotated by Martin Clayton. We focussed on these since the onsets in these intruments were challenging to extract whereas some instruments such as tabla are trivially easy. In terms of annotation, Martin Clayton has marked the onsets in Sonic Visualiser and then exported these as csv files (onset times in seconds). These excerpts can be found in `groundtruth` folder.
 
-If you run the `contents.R` in Matlab with the necessary packages (MIR toolbox + the functions from code folder, this will extract the onsets in all files and assess the accuracy using F-score, leading decent hit rates, see the table below:
-
-|| *Year* || *Temperature (low)* || *Temperature (high)* ||  
-||   1900 ||                 -10 ||                   25 ||  
-||   1910 ||                 -15 ||                   30 ||  
-||   1920 ||                 -10 ||                   32 ||  
-
-
-CCCCCC
-
-| Filename                   | Accuracy (F) |
-| -------------------------- | ------------ |
-| 20160531_item3_take2_track4_guitarDI_38_72.wav | 87.3 |
-| Guitar_fast.wav | 85.5 |
-| Debashish_Malhar_guitar_730-830.wav | 79.4 |
-| Sarod_fast.wav | 74.3 |
-| PrattyushB_Jhinjhoti_2Gats_Sarod_Sept17.wav | 79.2 |
-| Sarod_slow.wav | 69.7 |
-| Sitar_fast.wav | 82.4 |
-| Sitar_slow.wav | 73.1 |
-| ShujaatKh_Jhinjhoti_Sitar_Sept17.wav | 76.9 |
-
+If you run the `contents.R` in Matlab with the necessary packages (MIR toolbox + the functions from code folder, this will extract the onsets in all files and assess the accuracy using F-score, leading decent hit rates ranging from 73 to 87.
