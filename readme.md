@@ -34,15 +34,11 @@ The optimal values for the four parameters were defined for each instrument usin
 
 If you run the `contents.R` in Matlab with the necessary packages (MIR toolbox + the functions from code folder, this will extract the onsets in all files and assess the accuracy using F-score, leading decent hit rates, see the table below:
 
-| Characteristics | Types |
+|| *Year* || *Temperature (low)* || *Temperature (high)* ||  
+||   1900 ||                 -10 ||                   25 ||  
+||   1910 ||                 -15 ||                   30 ||  
+||   1920 ||                 -10 ||                   32 ||  
 
-| ------ | ----------- |
-
-| Altered Wing Structures   | Short, long, none |
-
-| Altered Body Color | brown, gold, green |
-
-| Altered Eye Color    | brown, red, hazel |
 
 CCCCCC
 
