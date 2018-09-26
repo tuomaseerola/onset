@@ -13,21 +13,24 @@ Onsets were extracted based on envelope characteristics using [Matlab](https://w
 1. First the audio signal is band-pass filtered to eliminate frequencies above _900-1200 Hz_ (or any specific threshold) to focus on body resonances of the plucked instruments. 
 
     <code>
-        a_low = mirfilterbank(file,'Manual',[-Inf ext_params(4)],'Hop',1);             % Frequency Filtering, default 900Hz (cut anything above
+        a_low = mirfilterbank(file,'Manual',[-Inf ext_params(4)],'Hop',1);
+        % Frequency Filtering, default 900Hz (cut anything above
     </code>
 
 2. The envelope of the filtered signal is then extracted and subjected to low-pass filtering and half-wave rectification before applying peak-picking. 
 
-    <code>
-a_low = mirenvelope(a_low,'Tau',0.01,'HalfwaveDiff','Smooth',2,'Normal');      % low-pass filtering for 0.01 + Halfwave differencing + Smoothing with average of order 2.
-    </code>
+<code>
+a_low = mirenvelope(a_low,'Tau',0.01,'HalfwaveDiff','Smooth',2,'Normal');
+% low-pass filtering for 0.01 + Halfwave differencing
+% And Smoothing with average of order 2.
+</code>
 
 
 3.  Peak-picking algorithm had three parameters to determine (1) _the local contrast threshold value_, (2) _normalised amplitude threshold value_, and (3) _threshold value for the minimum difference between peak values_. This includes temporally precise estimation of the peak time using quadratic interpolation.
 
-    <code>
+<code>
 o_low = mirpeaks(a_low,'Contrast',ext_params(1),'Threshold',ext_params(2),'Reso',ext_params(3),'Loose','Order','abscissa'); 
-    </code>
+</code>
 
 
 ## Implementation and Accuracy
