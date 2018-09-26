@@ -14,7 +14,7 @@ Onsets were extracted based on envelope characteristics using [Matlab](https://w
 
 Code folder contains the following files:
 
-* `contents.m` is script which allows to replicate the onset extraction accuracy analyses (F-measure) for a handful of files (sarod, sitar, and guitar) which contained manully annotated ground-truth data (onsets). The output is written to `Accuracy.csv`.
+* `contents.m` is script which allows to replicate the onset extraction accuracy analyses (using F-measure) for a handful of files (sarod, sitar, and guitar) which contained manully annotated ground-truth data (onsets). The output is written to `Accuracy.csv`.
 
 `extract_onset_custom.m` if the function that carried out the extraction and takes in four possible parameters. Currently there has been a light-weight optimisation of the parameters to optimise the accuracy using the annotations.
 
@@ -28,8 +28,24 @@ The folder also contains beat evaluation files from [audio onset detection secti
 
 3.  Peak-picking algorithm had three parameters to determine (1) _the local contrast threshold value_, (2) _normalised amplitude threshold value_, and (3) _threshold value for the minimum difference between peak values_. This includes temporally precise estimation of the peak time using quadratic interpolation.
 
-#### Estimation of accuracy
+#### Estimation of onset detection accuracy
 
-The optimal values for the four parameters were defined for each instrument using a 1-minute sample of manually annotated onsets and customised for each main instrument types (sitar, sarod, and guitar, etc.). This customisation lead to accuracies (F scores) of 73 to 87.
+The optimal values for the four parameters were defined for each instrument using a 1-minute sample of manually annotated onsets for a handful of examples (9). These short audio files and annotations are available in the respective folders (`audio` and `groundtruth`). These 9 excerpts are all taken from the Indian corpus, selected and annotated by Martin Clayton. We focussed on these since the onsets in these intruments were challenging to extract whereas some instruments such as tabla are trivially easy. In terms of annotation, Martin Clayton has marked the onsets in Sonic Visualiser and then exported these as csv files (onset times in seconds). These can be found in `groundtruth` folder.
 
+##### Three guitar excerpts
+- `20160531_item3_take2_track4_guitarDI_38_72.wav`
+- `Debashish_Malhar_guitar_730-830.wav`
+- `Guitar_fast.wav`
+
+##### Three sarod excerpts
+- `PrattyushB_Jhinjhoti_2Gats_Sarod_Sept17.wav`
+- `Sarod_fast.wav`
+- `Sarod_slow.wav`
+
+##### Three sitar excerpts
+- `ShujaatKh_Jhinjhoti_Sitar_Sept17.wav`
+- `Sitar_fast.wav`
+- `Sitar_slow.wav`
+
+If run the `contents.R` in matlab, that will extract the onsets in all files and assess the accuracy using F-score, leading decent hit rate (from 73-87).
 
