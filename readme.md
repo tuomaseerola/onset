@@ -1,6 +1,6 @@
 # Onset detection in the Interpersonal Entrainment in Musical Performance
 
-Onset detection is a well-established research area in MIR and there are multiple efficient solutions for extraction onsets from various types of musical materials [<a href="#note1" id="note1ref"><sup>1</sup></a>]. In the context of [Interpersonal Entrainment in Musical Performance (IEMP)](https://www.dur.ac.uk/iemp/), AHRC-funded research project, we wanted explore how musicians in different ensembles synchronise to each other. For this, we needed to extract onsets from diverse range of audio recordings. We wanted to rely on a conventional onset extraction technique that would be applied to as many different kinds of onsets in order to make the temporal comparison of different instruments comparable. Also, we wanted to keep the temporal resolution of the onset estimation high, much higher than the often used tolerance in the onset detection evaluation (e.g., 80 ms).
+Onset detection is a well-established research area in MIR and there are multiple efficient solutions for extraction onsets from various types of musical materials<a href="#note1" id="note1ref"><sup>1</sup></a>. In the context of [Interpersonal Entrainment in Musical Performance (IEMP)](https://www.dur.ac.uk/iemp/), AHRC-funded research project, we wanted explore how tightly or loosely musicians in different ensembles synchronise to each other. For this, we needed to extract onsets from diverse range of multitrack audio recordings. We wanted to rely on a conventional onset extraction technique that would be applied to as many different kinds of onsets in order to make the temporal comparison of different instruments comparable. Also, we wanted to keep the temporal resolution of the onset estimation high, much higher than the often used tolerance in the onset detection evaluation (e.g., 80 ms).
 
 ## Audio materials
 - Musical material in the [IEMP](https://www.dur.ac.uk/iemp/) project ranges from jembe music of West Africa to North Indian classical music to Western jazz.
@@ -43,14 +43,13 @@ o_low = mirpeaks(a_low,'Contrast',ext_params(1),...
 'Threshold',ext_params(2),'Reso',ext_params(3),'Loose','Order','abscissa'); 
 </code>
 
-#### Implementation and Accuracy
+#### Estimation of accuracy
 
 The optimal values for the four parameters were defined for each instrument using a 1-minute sample of manually annotated onsets and customised for each main instrument types (sitar, sarod, and guitar, etc.). This customisation lead to accuracies (F scores) of 73 to 87.
 
+#### Caveats
 
-Tuomas Eerola, 26 September 2018, Durham University, UK
-
-
+A number of other onset detection techniques (e.g, spectral difference, phase deviation, etc.) could have been used. There are several widely available tools (e.g., _Sonic Visualiser_) for onset extraction, but we were not satisfied with accuracy and options these tools provided for our project. 
 
 
 <a id="note1" href="#note1ref"><sup>1</sup></a>[Bello, J.P., Daudet, L., Abdallah, S., Duxbury, C., Davies, M., Sandler, M.B. (2005) "A Tutorial on Onset Detection in Music Signals", IEEE Transactions on Speech and Audio Processing 13(5), pp 1035–1047](http://www.iro.umontreal.ca/~pift6080/H09/documents/papers/bello_onset_tutorial.pdf).
