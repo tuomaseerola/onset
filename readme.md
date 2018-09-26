@@ -47,5 +47,17 @@ The optimal values for the four parameters were defined for each instrument usin
 - `Sitar_fast.wav`
 - `Sitar_slow.wav`
 
-If you run the `contents.R` in Matlab with the necessary packages (MIR toolbox + the functions from code folder, this will extract the onsets in all files and assess the accuracy using F-score, leading decent hit rate (from 73-87).
+If you run the `contents.R` in Matlab with the necessary packages (MIR toolbox + the functions from code folder, this will extract the onsets in all files and assess the accuracy using F-score, leading decent hit rates, see the table below:
+
+| Filename                   | Accuracy (F) |
+|--------------------------- |------------- |
+| 20160531_item3_take2_track4_guitarDI_38_72.wav | 87.3 |
+| Guitar_fast.wav | 85.5 |
+| Debashish_Malhar_guitar_730-830.wav | 79.4 |
+| Sarod_fast.wav | 74.3 |
+| PrattyushB_Jhinjhoti_2Gats_Sarod_Sept17.wav | 79.2 |
+| Sarod_slow.wav | 69.7 |
+| Sitar_fast.wav | 82.4 |
+| Sitar_slow.wav | 73.1 |
+| ShujaatKh_Jhinjhoti_Sitar_Sept17.wav | 76.9 |
 
